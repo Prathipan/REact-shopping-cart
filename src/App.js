@@ -19,6 +19,7 @@ export const CartContext = createContext();
 function App() {
  
   const [cartItems,setCartItems] = useState([]);
+  const [disable,setdisable] = useState(false);
   const content = [
     {
       id: 1,
@@ -70,13 +71,17 @@ function App() {
     },
   ];
   console.log(cartItems)
-  const clickFunc = (item) => {
-    setCartItems([...cartItems, item]);
+  // const clickFunc = (item) => {
+  //     setCartItems([...cartItems, item]);
+  // }
+  const deleteFunc = (id) => {
+    const arr = cartItems.filter((item,index)=> cartItems.indexOf(item) !== id);
+    setCartItems(arr);
   }
   return (
     <Router>
       <div className="App">
-        <CartContext.Provider value={{cartItems,setCartItems}}>
+        <CartContext.Provider value={{cartItems,setCartItems,disable,setdisable}}>
         <NavBar cartItems={cartItems}/>
         <Routes>
           <Route
@@ -88,7 +93,7 @@ function App() {
                   <div className="container px-4 px-lg-5 mt-5">
                     <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                       {content.map((content,index) => {
-                        return <Card key={index} data={content} clickFunc={clickFunc} />;
+                        return <Card key={index} data={content}  deleteFunc={deleteFunc}/>;
                       })}
                     </div>
                   </div>
@@ -97,7 +102,7 @@ function App() {
               </>
             }
           />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/cart" element={<Cart deleteFunc={deleteFunc}/>} />
         </Routes>
         </CartContext.Provider>
       </div>
