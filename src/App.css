@@ -4077,6 +4077,8 @@ textarea.form-control-lg {
 }
 
 .navbar-collapse {
+  display: flex;
+  flex-direction: row;
   flex-basis: 100%;
   flex-grow: 1;
   align-items: center;
@@ -4140,6 +4142,7 @@ textarea.form-control-lg {
   }
   .navbar-expand-sm .navbar-collapse {
     display: flex !important;
+    flex-direction: row !important;
     flex-basis: auto;
   }
   .navbar-expand-sm .navbar-toggler {
@@ -11296,4 +11299,15 @@ textarea.form-control-lg {
 .cart-img{
   height: 100px;
   width: 100px;
+}
+.nav-container{
+  display: flex;
+}
+
+@media screen and (max-width: 400px) {
+  .custom-img{
+    margin: 0px;
+    height: 160px;
+    width: 100px;
+  }
 }
