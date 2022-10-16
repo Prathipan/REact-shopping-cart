@@ -4609,7 +4609,11 @@ textarea.form-control-lg {
 .card-img-bottom {
   width: 100%;
 }
-
+.custom-img{
+    margin-left: 56px;
+    height: 200px;
+    width: 150px;
+}
 .card-img,
 .card-img-top {
   border-top-left-radius: calc(0.25rem - 1px);
@@ -11285,4 +11289,11 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+}
+.card{
+  margin: 5px;
+}
+.cart-img{
+  height: 100px;
+  width: 100px;
 }
