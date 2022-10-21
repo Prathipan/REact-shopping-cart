@@ -21,23 +21,27 @@ const Cart = ({ deleteFunc }) => {
             <div className="col-lg-9">
               {cartItems.map(({ id, value, price, imgUrl }, index) => {
                 return (
-                  <div key={index} className="card">
+                  <div key={index} className="card cart">
                     <img className="cart-img" src={imgUrl} alt={value}></img>
+                    <div className="cart-description">
                     <h3>{value}</h3>
                     <p>Rs.{price}</p>
+                    </div>
                     <button
-                      className="btn btn-sm btn-danger"
+                      className="btn btn-danger"
                       onClick={() => handleDelete(index)}
                     >
-                      Remove from cart
+                      X
                     </button>
                   </div>
                 );
               })}
             </div>
-            <div className="col-lg-3">
+            <div className="col-lg-3 checkout">
               <h2>Total : Rs.{total}</h2>
-              <button className="btn btn-success">Checkout</button>
+              <div className="checkout-btn">
+                <button className="btn btn-success">Checkout</button>
+              </div>
             </div>
           </>
         ) : (

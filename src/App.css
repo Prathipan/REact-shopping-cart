@@ -11296,6 +11296,12 @@ textarea.form-control-lg {
 .card{
   margin: 5px;
 }
+.cart{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
 .cart-img{
   height: 100px;
   width: 100px;
@@ -11303,7 +11309,15 @@ textarea.form-control-lg {
 .nav-container{
   display: flex;
 }
-
+.checkout{
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+.checkout-btn{
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+}
 @media screen and (max-width: 400px) {
   .custom-img{
     margin: 0px;
